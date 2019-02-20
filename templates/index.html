@@ -1,0 +1,384 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Awesome Responsive Website</title>
+  <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
+  <script src="{% static 'js/typed.js' %}"></script>
+  <script src="{% static 'js/wow.min.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+</head>
+<style type="text/css">
+	body
+	{
+ 		background: #303030;
+ 		color: #ffffff;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		overflow-x: hidden; /* prevent horizontal scrollbar from appearing */
+	}
+
+	a {
+	color: #47C6F8;
+	}
+
+	a:hover {
+	color: #0FF;
+	}
+
+	#about, #home, #contact
+	{
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+	
+	h2
+	{
+		text-align: center;
+		font-size: 40px;
+		padding-bottom: 40px;
+	}
+
+	h2 span
+	{
+		color: #28a7e9;
+		font-weight: bold;
+	}
+
+	#home
+	{
+		background-size: cover;
+		padding-top: 160px;
+		padding-bottom: 100px;
+		min-height: 650px;
+	}
+	#home h1
+	{
+		font-weight: 300;
+		font-size: 70px;
+		padding-bottom: 10px;
+	}
+	#home h1 span
+	{
+		color: #28a7e9;
+		font-weight: bold;
+	}
+	#home .btn
+	{
+		background: transparent;
+		border-radius: 2px;
+		color: #fff;
+		font-size: 16px;
+		font-weight: bold;
+		margin-top: 20px;
+		width: 180px;
+		height: 60px;
+		padding-top: 18px;
+		-webkit-transition: all 0.4s ease-in-out;
+		        transition: all 0.4s ease-in-out;
+	}
+	#home .btn:hover
+	{
+		background: #28a7e9;
+		border-color: transparent;
+	}
+	.element {
+	height: 60px;
+	font-size: 16px;
+	}
+
+	#about .media-heading-wrapper
+	{
+		padding-bottom: 32px;
+	}
+	#about .media-heading-wrapper .fa
+	{
+		border: 1px solid #fff;
+		border-radius: 2px;
+		color: #fff;
+		font-size: 24px;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		margin-bottom: 20px;
+		margin-right: 20px;
+	}
+	#about .media-heading-wrapper h3
+	{
+		font-size: 18px;
+		font-weight: bold;
+		padding-top: 20px;
+		padding-left: 52px;
+	}
+
+	#contact
+	{
+		background: #202020;
+	}
+
+	#contact .form-control
+	{
+		background: transparent;
+		border: 1px solid #28a7e9;
+		border-radius: 2px;
+		box-shadow: none;
+		color: #fff;
+		margin-top: 6px;
+		margin-bottom: 16px;
+	}
+	#contact label
+	{
+		font-weight: 500;
+	}
+	#contact input
+	{
+		height: 50px;
+	}
+	#contact input[type="submit"]
+	{
+		background: #28a7e9;
+		font-weight: bold;
+		-webkit-transition: all 0.4s ease-in-out;
+		transition: all 0.4s ease-in-out;
+	}
+
+	#contact input[type="submit"]:hover
+	{
+		background: transparent;
+	}
+	#contact address
+	{
+		border-bottom: 1px solid #505050;
+		padding-top: 30px;
+	}
+	#contact address .address-title
+	{
+		font-weight: bold;
+		font-size: 20px;
+		padding-bottom: 10px;
+	}
+	#contact address span
+	{
+		display: block;
+		padding-bottom: 30px;
+	}
+	#contact address .fa
+	{
+		border: 1px solid #fff;
+		border-radius: 2px;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+
+	.social-icon
+	{
+		position: relative;
+		padding: 0;
+		margin: 0;
+	}
+	.social-icon h4
+	{
+		display: inline-block;
+		padding-right: 20px;
+	}
+	.social-icon li
+	{
+		display: inline-block;
+		list-style: none;
+	}
+	.social-icon li a
+	{
+		border: 1px solid #fff;
+		border-radius: 2px;
+		color: #fff;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		text-decoration: none;
+		-webkit-transition: all 0.4s ease-in-out;
+		        transition: all 0.4s ease-in-out;
+		margin-right: 10px;
+	}
+	.social-icon li a:hover
+	{
+		background: #28a7e9;
+		border-color: transparent;
+	}
+
+	
+</style>
+
+
+<body id="top">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">Awesome</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#top">HOME</a></li>
+					<li><a href="#about">ABOUT</a></li>
+					<li><a href="#contact">CONTACT</a></li>
+					<li><a href="#location">LOCATION</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<section id="home">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-offset-2 col-md-8">
+    				<h1 class="wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">We make website that are <span>awesome</span></h1>
+
+    				<a data-scroll href="#about" class="btn btn-default wow fadeInUp" data-wow-offset="50" data-wow-delay="0.6s">GET STARTED</a>	
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <section id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+    					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">WE ARE <span>AWESOME</span></h2>
+    				</div>
+					<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.6s">
+						<div class="media">
+							<div class="media-heading-wrapper">
+								<div class="media-object pull-left">
+									<i class="fa fa-mobile"></i>
+								</div>
+								<h3 class="media-heading">FULLY RESPONSIVE</h3>
+							</div>
+							<div class="media-body">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. Adipiscing vitae vel quam proin eget mauris eget. Lorem ipsum dolor sit amet.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-offset="50" data-wow-delay="0.9s">
+						<div class="media">
+							<div class="media-heading-wrapper">
+								<div class="media-object pull-left">
+									<i class="fa fa-comment-o"></i>
+								</div>
+								<h3 class="media-heading">FREE SUPPORT</h3>
+							</div>
+							<div class="media-body">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. Adipiscing vitae vel quam proin eget mauris eget. Lorem ipsum dolor sit amet.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
+						<div class="media">
+							<div class="media-heading-wrapper">
+								<div class="media-object pull-left">
+									<i class="fa fa-html5"></i>
+								</div>
+								<h3 class="media-heading">HTML5 &AMP; CSS3</h3>
+							</div>
+							<div class="media-body">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. Adipiscing vitae vel quam proin eget mauris eget. Lorem ipsum dolor sit amet.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="service">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-12">
+    					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">OUR <span>AWESOME</span> THINGS</h2>
+    				</div>
+    				<div class="col-md-4 wow fadeIn" data-wow-offset="50" data-wow-delay="0.6s">
+    					<i class="fa fa-laptop"></i>
+    					<h4>Web Design</h4>
+    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. Adipiscing vitae vel quam proin eget mauris eget. Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie.</p>
+    				</div>
+    				<div class="col-md-4 active wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">
+    					<i class="fa fa-cloud"></i>
+    					<h4>Cloud Computing</h4>
+    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. Adipiscing vitae vel quam proin eget mauris eget. Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie.</p>
+    				</div>
+    				<div class="col-md-4 wow fadeIn" data-wow-offset="50" data-wow-delay="0.6s">
+    					<i class="fa fa-cog"></i>
+    					<h4>UX Design</h4>
+    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. Adipiscing vitae vel quam proin eget mauris eget. Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie.</p>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+
+    	<section id="contact">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-12">
+    					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">CONTACT <span>AWESOME</span></h2>
+    				</div>
+    				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
+    					<form action="#" method="post">
+    						<label>NAME</label>
+    						<input name="fullname" type="text" class="form-control" id="fullname">
+   						  	
+                            <label>EMAIL</label>
+    						<input name="email" type="email" class="form-control" id="email">
+   						  	
+                            <label>MESSAGE</label>
+    						<textarea name="message" rows="4" class="form-control" id="message"></textarea>
+    						
+                            <input type="submit" class="form-control">
+    					</form>
+    				</div>
+    				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
+    					<address>
+    						<p class="address-title">OUR ADDRESS</p>
+    						<span>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie.</span>
+    						<p><i class="fa fa-phone"></i> +91 7000078392</p>
+    						<p><i class="fa fa-envelope-o"></i> sharmagudal@gmail.com</p>
+    						<p><i class="fa fa-map-marker"></i>BTM 1st Layout Bangalore</p>
+    					</address>
+    					<ul class="social-icon">
+    						<li><h4>WE ARE SOCIAL</h4></li>
+    						<li><a href="#" class="fa fa-facebook"></a></li>
+    						<li><a href="#" class="fa fa-twitter"></a></li>
+    						<li><a href="https://www.youtube.com/channel/UC4yzoGuKkCL_8FzI-B-x83A" class="fa fa-youtube"></a></li>
+    					</ul>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+
+    	<iframe height="450" frameborder="0" style="width:100%!important;border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDskY7Cy4CMlEaDTI74874Xk0ZEIHGoXzs&q=bengaluru" allowfullscreen></iframe>
+
+		<footer id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
+                        Awesome &copy; Copyright 2016. Designed By Gudal Sharma</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
