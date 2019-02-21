@@ -126,8 +126,12 @@ STATICFILES_DIRS = (
 )
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_collect')
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = "sharmagudal@gmail.com"
-EMAIL_HOST_PASSWORD = "your Password"
+EMAIL_HOST_PASSWORD = "Gud@l#123"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
