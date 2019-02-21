@@ -2,8 +2,13 @@ from django.shortcuts import render
 
 def index(request):
     context={}
-    return render(request, 'index.html', context)
+    if request.method=='POST':
+    	print(request.method,"POST")
+    	try:
+		    fullname = request.POST['fullname']
+			email = request.POST["email"]
+			message = request.POST["message"]
+			print(fullname,"fullname")
 
-def page(request):
-    context={}
-    return render(request, 'page.html', context)    
+    return render(request, 'index.html', context)
+   
